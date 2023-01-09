@@ -8,7 +8,8 @@ import lombok.Setter;
 @Entity
 public class Author {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @SequenceGenerator(name = "authorSeq", sequenceName = "authorSeq", initialValue = 1, allocationSize = 1)
+    @GeneratedValue(generator = "authorSeq")
     @Column(name = "id", nullable = false)
     @Getter
     @Setter

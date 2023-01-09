@@ -8,7 +8,8 @@ import org.hibernate.annotations.NotFound;
 @Entity
 public class PhoneNumber {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @SequenceGenerator(name = "phoneSeq", sequenceName = "phoneSeq", initialValue = 1, allocationSize = 1)
+    @GeneratedValue(generator = "phoneSeq")
     @Column(name = "id", nullable = false)
     @Getter
     @Setter

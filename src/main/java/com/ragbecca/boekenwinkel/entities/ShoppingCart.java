@@ -7,7 +7,8 @@ import lombok.Setter;
 @Entity
 public class ShoppingCart {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @SequenceGenerator(name = "cartSeq", sequenceName = "cartSeq", initialValue = 1, allocationSize = 1)
+    @GeneratedValue(generator = "cartSeq")
     @Column(name = "id", nullable = false)
     @Getter
     @Setter

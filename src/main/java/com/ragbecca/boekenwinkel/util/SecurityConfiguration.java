@@ -77,6 +77,17 @@ public class SecurityConfiguration {
             userRepository.save(user);
         }
 
+        if (userRepository.findById("123@123.nl").isEmpty()) {
+            User user = new User();
+            user.setUsername("123@123.nl");
+            user.setDisplayName("Magic");
+            user.setPassword(passwordEncoder().encode("456!456"));
+            user.setRole("EMPLOYEE");
+            user.setPhoneNumber(phoneNumber);
+            user.setAddress(address);
+            userRepository.save(user);
+        }
+
         return http.build();
     }
 

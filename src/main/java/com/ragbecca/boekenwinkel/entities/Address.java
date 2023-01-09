@@ -7,7 +7,8 @@ import lombok.Setter;
 @Entity
 public class Address {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @SequenceGenerator(name = "addressSeq", sequenceName = "addressSeq", initialValue = 1, allocationSize = 1)
+    @GeneratedValue(generator = "addressSeq")
     @Column(name = "id", nullable = false)
     @Getter
     @Setter
