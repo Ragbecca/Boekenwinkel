@@ -1,6 +1,7 @@
 package com.ragbecca.boekenwinkel.entities;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -16,6 +17,7 @@ public class Author {
     @Getter
     @Setter
     @Column(nullable = false)
+    @NotNull
     private String name;
 
     @Getter
