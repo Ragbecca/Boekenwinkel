@@ -56,7 +56,7 @@ public class SecurityConfiguration {
         address.setStreet("Daam Fockemalaan");
         address.setHouseNumber(22);
         address.setCity("Amersfoort");
-        address.setCountry("Netherlands");
+        address.setCountry("NL");
 
         if (phoneNumberRepository.findById(1L).isEmpty()) {
             phoneNumberRepository.save(phoneNumber);

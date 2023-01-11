@@ -5,4 +5,8 @@ import com.ragbecca.boekenwinkel.entities.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface PublisherRepository extends JpaRepository<Publisher, String> {
+
+    Publisher findByUrl(String url);
+
+    Publisher findByName(String name);
 }

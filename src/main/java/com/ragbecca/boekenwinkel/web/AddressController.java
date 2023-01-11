@@ -22,9 +22,8 @@ public class AddressController {
         }
         addressRepository.save(address);
         Long id = addressRepository.findByStreetAndHouseNumberAndCity(
-                address.getStreet(), address.getHouseNumber(), address.getCity()).getId();
-        System.out.println(id);
-        return "Adres succesvol opgeslagen! Met id: " + id;
+                address.getStreet(), address.getHouseNumber(), address.getCity()).getId();;
+        return String.valueOf(id);
     }
 
     @GetMapping("/address/get-all")
